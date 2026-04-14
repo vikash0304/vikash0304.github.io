@@ -1,54 +1,143 @@
-theme:minimal
-remote_theme: minimal
-## Portfolio
+# 👋 Hi, I'm Vikash Kumar
 
-I am a Full stack developer with an experience of over 6 years. I have hands on experienceworking with Web Application and technologies. I have extensively worked on Java, ReactJs and AWS cloud Services for 6 years.
+🚀 **Tech Lead | Full Stack Engineer | Java • React • AWS | GenAI Enthusiast**
 
----
-
-## Skills
-
-<p align='left'>
-  <img src="https://icon2.cleanpng.com/20180805/xwk/kisspng-logo-java-runtime-environment-programming-language-java-util-concurrentmodificationexception-%C3%96mer-5b6766aaf21ab4.3339227715335031469917.jpg" alt="Java" width="40" height="40">
-  <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png' alt="css" width="40" height="40">
-  <img src='https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' height='30' width='auto' alt="js">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="react" width="auto" height="40"/>
-   <img src="https://img.icons8.com/?size=512&id=33039&format=png" alt="AWS" width="40" height="40"/>
-</p>
+Results-driven engineer with 6+ years of experience building scalable microservices and full-stack applications. Recently expanding into **Generative AI, LLMs, and intelligent systems**.
 
 ---
 
-## Experience
+## 🔗 Connect with Me
 
-### **Tech Lead**
-### Ford Motors Pvt Ltd
+- 📧 Email: kr.vikash3491@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/vikash-kumar-219243130/
+- 💻 GitHub: https://github.com/vikash0304
 
-Conceptualizing and building REST APIs using the spring-boot framework. Involved in requirement specification and gathering of data for technical HLD and LLD design activities.
-Participated in integration activities with Front-end and DevOps using Tekton and Kubernetes. Worked on Optimization of performance using Java 17 features implementation.
-Followed TDD approach for validating the scenarios and Standardized the codE quality and coverage using SONAR, FOSSA, 42Crunch, and Unit testing.
-
-### **Senior Software Engineer**
-### EPAM Systems Pvt ltd
-
-Conceptualizing and building REST APIs using a microservices architecture. Involved in requirement specification and gathering of data for technical HLD and LLD design activities. Participated in integration activities with Front-end and DevOps. Worked on Optimization of performance using Java 11+ features and Caching implementation. Worked on messaging platform using IBM MQ.
-Worked on cloud technologies using AWS services, like: EC2, Lambda, RDS, S3, etc.
-
-### **Senior Software Engineer**
-### Cybage Software Pvt Ltd
-
-Conceptualizing and building REST APIs using a microservices architecture. Involved in requirement specification and gathering of data for technical HLD and LLD design activities.
-Participated in integration activities with Front-end and DevOps.· Worked on Optimization of performance using Java 8+ features and Caching implementation.
-Followed TDD approach for validating the scenarios and Standardized the code quality and coverage using sonar and unit testing.
+📄 **[Download Resume](./Vikash_Kumar_Resume.pdf)**
 
 ---
 
-## Education
+## 🧠 Core Expertise
 
-### **Pondicherry University**
-### Master of Science: Computer Science (2012- 2014)
+- Backend: Java (8–17), Spring Boot, Microservices
+- Frontend: React.js, JavaScript, HTML, CSS
+- Cloud: AWS (EC2, S3, Lambda, RDS)
+- Messaging: Kafka, IBM MQ
+- DevOps: Docker, Kubernetes, Tekton CI/CD
+- Engineering Practices: TDD, Clean Code, Sonar, FOSSA
+
 ---
 
-### INTERESTS
-Apart from being a developer,
+## 🤖 Generative AI & LLM Expertise
 
-I enjoy being outdoors, so i go for run everyday. I love travelling to different places and explore different cultures. When i am inside , i play chess and listening music in my free time.
+- Strong understanding of **LLMs (Large Language Models)** and their real-world applications
+- Hands-on with **RAG (Retrieval-Augmented Generation)** architecture
+- Experience using **LangChain** for building AI-powered workflows
+- Understanding of **MCP (Model Context Protocol)** for structured LLM interactions
+- Built prototype systems integrating:
+    - Document-based Q&A systems
+    - Context-aware response generation
+    - Prompt engineering strategies for better accuracy
+
+---
+
+## 💼 Experience
+
+### 🚗 Tech Lead — Ford Motors Pvt Ltd (2023 – Present)
+
+- Led design & development of scalable microservices using Spring Boot
+- Designed HLD/LLD for systems handling high-volume traffic
+- Improved performance using Java 17 optimizations
+- Integrated CI/CD using Tekton & Kubernetes
+- Enforced code quality via Sonar, FOSSA, 42Crunch
+
+---
+
+### 💻 Senior Software Engineer — EPAM Systems (2021 – 2023)
+
+- Built scalable microservices architecture
+- Worked on AWS (EC2, Lambda, S3, RDS)
+- Improved performance via caching (~30% improvement)
+- Implemented messaging solutions using IBM MQ
+
+---
+
+### 🏢 Senior Software Engineer — Cybage Software (2018 – 2021)
+
+- Developed REST APIs using Java & Spring Boot
+- Applied TDD practices and improved code quality
+- Optimized backend services
+
+---
+
+## 🚀 Key Projects
+
+### 🏦 Loan Processing Platform
+- Scalable microservices-based mortgage platform
+- Designed for high availability and fault tolerance
+
+---
+
+### 🔔 Real-Time Notification System
+- Kafka-based event-driven architecture
+- High throughput & low latency messaging system
+
+---
+
+### 🤖 GenAI Knowledge Assistant (RAG-based System)
+
+- Built an intelligent Q&A system using **RAG architecture**
+- Integrated **LLM + vector database + document retrieval**
+- Used **LangChain** for orchestration and chaining
+- Implemented prompt strategies for contextual accuracy
+- Explored **MCP-based structured communication** for LLM interactions
+
+---
+
+## 🏗️ System Design Portfolio
+
+- URL Shortener (Scalable design)
+- Payment System Architecture
+- Notification System (Kafka-based)
+- Distributed Loan Processing System
+- RAG-based AI System Design
+
+👉 *(Diagrams and detailed design coming soon)*
+
+---
+
+## 💻 GitHub Projects
+
+- 🔹 LRU Cache (Java - O(1) implementation)
+- 🔹 Spring Boot Microservices Template
+- 🔹 Kafka Event-Driven System
+- 🔹 React Mini Projects
+- 🔹 RAG-based AI Assistant (GenAI project)
+
+---
+
+## 🎓 Education
+
+**Pondicherry University**  
+M.Sc. Computer Science (2012 – 2014)
+
+---
+
+## 🌱 Interests
+
+- Running & Fitness 🏃
+- Travelling 🌍
+- Chess ♟️
+- Music 🎧
+
+---
+
+## ⚡ What Makes Me Different
+
+- Strong **system design mindset**
+- Experience in **scalable distributed systems**
+- Hands-on with **modern GenAI technologies (LLM, RAG, LangChain)**
+- Leadership experience as a **Tech Lead**
+
+---
+
+⭐ *Actively exploring opportunities in product-based & AI-driven companies*
