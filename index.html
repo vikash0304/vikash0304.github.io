@@ -8,14 +8,27 @@
 
     <script>
         function toggleTheme() {
-            document.documentElement.classList.toggle('dark');
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+
+            const knob = document.getElementById('toggle-knob');
+            knob.classList.toggle('translate-x-10');
         }
+
+        // Mouse move dynamic background
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth * 100;
+            const y = e.clientY / window.innerHeight * 100;
+            document.body.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(59,130,246,0.15), transparent 40%),
+                                    radial-gradient(circle at ${100-x}% ${y}%, rgba(139,92,246,0.15), transparent 40%),
+                                    radial-gradient(circle at ${x}% ${100-y}%, rgba(16,185,129,0.15), transparent 40%)`;
+        });
     </script>
 
     <style>
         .hover-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
         }
     </style>
@@ -25,20 +38,17 @@
 
 <!-- NAVBAR -->
 <div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
-    <h1 class="font-bold text-lg">Vikash Kumar</h1>
 
-    <div class="flex items-center gap-4">
-        <!-- TOGGLE SWITCH -->
-        <div onclick="toggleTheme()" class="w-20 h-10 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 cursor-pointer">
-            <div class="bg-white dark:bg-gray-900 w-8 h-8 rounded-full shadow-md transform dark:translate-x-10 transition duration-300 flex items-center justify-center">
-                🌙
-            </div>
+    <!-- LEFT: Resume -->
+    <a href="Vikash_Kumar_Resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-600 transition">
+        Resume
+    </a>
+
+    <!-- RIGHT: Toggle -->
+    <div onclick="toggleTheme()" class="w-20 h-10 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 cursor-pointer">
+        <div id="toggle-knob" class="bg-white dark:bg-gray-900 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition duration-300">
+            🌙
         </div>
-
-        <!-- RESUME BUTTON -->
-        <a href="Vikash_Kumar_Resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-600 transition">
-            Resume
-        </a>
     </div>
 </div>
 
