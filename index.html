@@ -9,86 +9,113 @@
     <script>
         function toggleTheme() {
             const html = document.documentElement;
-            html.classList.toggle('dark');
-
             const knob = document.getElementById('toggle-knob');
+
+            html.classList.toggle('dark');
             knob.classList.toggle('translate-x-10');
+            document.body.style.background = "";
+
+            knob.innerHTML = html.classList.contains('dark') ? '🌙' : '☀️';
         }
 
-        // Mouse move dynamic background
         window.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth * 100;
-            const y = e.clientY / window.innerHeight * 100;
-            document.body.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(59,130,246,0.15), transparent 40%),
-                                    radial-gradient(circle at ${100-x}% ${y}%, rgba(139,92,246,0.15), transparent 40%),
-                                    radial-gradient(circle at ${x}% ${100-y}%, rgba(16,185,129,0.15), transparent 40%)`;
+            if (!document.documentElement.classList.contains('dark')) {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+
+                document.body.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(99,102,241,0.12), transparent 40%),
+                                      radial-gradient(circle at ${100-x}% ${y}%, rgba(236,72,153,0.12), transparent 40%),
+                                      #f9fafb`;
+            }
         });
     </script>
 
     <style>
-        .hover-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+        body { transition: all 0.3s ease; }
+
+        body {
+            background: #f9fafb;
+            color: #111827;
         }
+
+        .dark body {
+            background: #020617 url("particle-strokes.svg") center/cover no-repeat;
+            color: #f8fafc;
+        }
+
+        .dark body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(2,6,23,0.75);
+            z-index: -1;
+        }
+
+        .glass {
+            background: linear-gradient(135deg, #eef2ff, #fce7f3);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .dark .glass {
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        a { transition: all 0.2s ease; }
+        a:hover { transform: scale(1.08); }
     </style>
 </head>
 
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans transition duration-300">
+<body class="font-sans">
 
-<!-- NAVBAR -->
-<div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
-
-    <!-- LEFT: Resume -->
-    <a href="Vikash_Kumar_Resume.pdf" class="bg-blue-500 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-600 transition">
-        Resume
-    </a>
-
-    <!-- RIGHT: Toggle -->
+<div class="flex justify-between items-center p-6 max-w-6xl mx-auto">
+    <a href="Vikash_Kumar_Resume.pdf" class="bg-indigo-600 text-white px-5 py-2 rounded-xl shadow hover:bg-indigo-700 transition">Resume</a>
     <div onclick="toggleTheme()" class="w-20 h-10 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 cursor-pointer">
-        <div id="toggle-knob" class="bg-white dark:bg-gray-900 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition duration-300">
-            🌙
-        </div>
+        <div id="toggle-knob" class="bg-white dark:bg-gray-900 w-8 h-8 rounded-full shadow-md flex items-center justify-center transition duration-300">☀️</div>
     </div>
 </div>
 
-<!-- HERO -->
-<section class="text-center py-16">
-    <img src="profile.png" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500"/>
+<section class="text-center py-20">
+    <img src="profile.png" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-indigo-500 shadow-lg"/>
     <h1 class="text-4xl font-bold">Vikash Kumar</h1>
-    <p class="text-xl text-gray-500 dark:text-gray-400 mt-2">
-        Tech Lead | Full Stack Engineer | Java • React • Cloud • GenAI
-    </p>
+    <p class="text-lg mt-3 opacity-90">Tech Lead | Full Stack Engineer | Java • React • Cloud • GenAI</p>
+    <p class="text-sm mt-2 opacity-70">Scalable systems • Cloud-native architecture • GenAI integration</p>
 
     <div class="mt-6 flex justify-center gap-4 flex-wrap">
-        <a href="https://github.com/vikash0304" class="border px-5 py-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition">GitHub</a>
-        <a href="https://www.linkedin.com/in/vikash-kumar-219243130/" class="border px-5 py-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition">LinkedIn</a>
-        <a href="https://medium.com/@kr-vikash3491" class="border px-5 py-2 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition">Medium</a>
+        <a href="https://github.com/vikash0304" class="glass px-5 py-2 rounded-xl">GitHub</a>
+        <a href="https://www.linkedin.com/in/vikash-kumar-219243130/" class="glass px-5 py-2 rounded-xl">LinkedIn</a>
+        <a href="https://medium.com/@kr-vikash3491" class="glass px-5 py-2 rounded-xl">Medium</a>
     </div>
 </section>
 
 <!-- ABOUT -->
 <section class="max-w-4xl mx-auto py-12 px-6">
     <h2 class="text-2xl font-semibold mb-4">About</h2>
-    <p class="text-gray-600 dark:text-gray-300">
-        Tech Lead with 8+ years of experience building scalable cloud native systems, microservices, and modern applications.
-        Strong focus on system design, cloud platforms (AWS and GCP), and emerging GenAI technologies.
+    <p>
+        Tech Lead with 8+ years of experience building scalable cloud native systems, microservices, and modern applications. Strong focus on system design, cloud platforms (AWS and GCP), and emerging GenAI technologies.
     </p>
 </section>
 
 <!-- SKILLS -->
-<section class="bg-gray-100 dark:bg-gray-800 py-12">
+<section class="py-12">
     <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-semibold mb-6">Skills</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">Java / Spring Boot /Microservices</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">REST API / GraphQL</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">ReactJS / Angular</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">AWS / GCP</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">Kafka / IBM-MQ / Rabbit-MQ</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">Docker / Kubernetes</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">DSA</div>
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">GenAI / LLM / RAG</div>
+            <div class="glass p-4 rounded-xl hover-card">Java / Spring Boot / Microservices</div>
+            <div class="glass p-4 rounded-xl hover-card">REST API / GraphQL</div>
+            <div class="glass p-4 rounded-xl hover-card">ReactJS / Angular</div>
+            <div class="glass p-4 rounded-xl hover-card">AWS / GCP</div>
+            <div class="glass p-4 rounded-xl hover-card">Kafka / MQ</div>
+            <div class="glass p-4 rounded-xl hover-card">Docker / Kubernetes</div>
+            <div class="glass p-4 rounded-xl hover-card">DSA</div>
+            <div class="glass p-4 rounded-xl hover-card">GenAI / LLM / RAG</div>
         </div>
     </div>
 </section>
@@ -97,67 +124,87 @@
 <section class="max-w-4xl mx-auto py-12 px-6">
     <h2 class="text-2xl font-semibold mb-6">Experience</h2>
 
-    <div class="mb-6 hover-card p-4 rounded-xl">
+    <!-- Baxter -->
+    <div class="glass p-5 rounded-xl mb-6 hover-card">
+        <h3 class="text-xl font-bold">Senior Engineer - Baxter Planning</h3>
+        <p class="opacity-80">2024 - Present</p>
+        <ul class="list-disc ml-6 mt-2">
+            <li>Architected GraphQL APIs and backend services using Java 21 & Spring Boot.</li>
+            <li>Implemented LTB optimization using returns, repair yields, and demand forecasts.</li>
+            <li>Integrated ML-based forecasting into NPI planning; built EOL monitoring & alerts.</li>
+            <li>Optimized BOM data pipelines across product lifecycles.</li>
+        </ul>
+    </div>
+
+    <!-- Ford -->
+    <div class="glass p-5 rounded-xl mb-6 hover-card">
         <h3 class="text-xl font-bold">Tech Lead - Ford Motors</h3>
-        <p class="text-gray-500">2023 - Present</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>Designed scalable microservices for automotive domain</li>
-            <li>Led architecture decisions</li>
-            <li>Improved performance using Java 17</li>
+        <p class="opacity-80">2023 - 2024</p>
+        <ul class="list-disc ml-6 mt-2">
+            <li>Designed cloud-native microservices (Java 8–17, Spring Boot).</li>
+            <li>Led architecture modernization (Kubernetes, Redis, CI/CD).</li>
+            <li>Implemented event-driven integrations using Kafka and IBM MQ.</li>
         </ul>
     </div>
 
-    <div class="mb-6 hover-card p-4 rounded-xl">
-        <h3 class="text-xl font-bold">Senior Software Engineer - EPAM</h3>
-        <p class="text-gray-500">2021 - 2023</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>Built scalable microservices for fintech domain</li>
-            <li>Worked on AWS cloud</li>
+    <!-- EPAM -->
+    <div class="glass p-5 rounded-xl mb-6 hover-card">
+        <h3 class="text-xl font-bold">Senior Software Engineer - EPAM Systems</h3>
+        <p class="opacity-80">2020 - 2023</p>
+        <ul class="list-disc ml-6 mt-2">
+            <li>Built high-throughput REST services with Java 17 & Spring Boot.</li>
+            <li>Delivered GCP solutions with ~99.7% availability.</li>
         </ul>
     </div>
 
-    <div class="hover-card p-4 rounded-xl">
+    <!-- Cybage -->
+    <div class="glass p-5 rounded-xl hover-card">
         <h3 class="text-xl font-bold">Senior Software Engineer - Cybage</h3>
-        <p class="text-gray-500">2018 - 2021</p>
-        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
-            <li>Built scalable microservices for financial domain</li>
-            <li>Improved code quality</li>
+        <p class="opacity-80">2018 - 2020</p>
+        <ul class="list-disc ml-6 mt-2">
+            <li>Built scalable microservices for financial domain.</li>
+            <li>Improved code quality.</li>
         </ul>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="bg-gray-100 dark:bg-gray-800 py-12">
+<section class="py-12">
     <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-semibold mb-6">Projects</h2>
-
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">
+            <div class="glass p-5 rounded-xl hover-card">
                 <h3 class="font-bold">Supply Chain Optimization (Prophet)</h3>
-                <p class="text-gray-600 dark:text-gray-300 mt-2">
-                    Implemented LTB logic, ML forecasting, EOL monitoring, and BOM optimization.
-                </p>
+                <p class="mt-2">Implemented LTB logic, ML forecasting, EOL monitoring, and BOM optimization.</p>
             </div>
 
-            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl hover-card">
+            <div class="glass p-5 rounded-xl hover-card">
                 <h3 class="font-bold">GenAI Knowledge Assistant</h3>
-                <p class="text-gray-600 dark:text-gray-300 mt-2">
-                    Built RAG-based system using LLM and ChatBot.
-                </p>
+                <p class="mt-2">Built RAG-based system using LLM.</p>
+                <a href="#" class="text-indigo-500 mt-2 inline-block">View Project →</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CONTACT -->
-<section class="max-w-4xl mx-auto py-12 px-6 text-center">
-    <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-    <p>Email: kr.vikash3491@gmail.com</p>
+<!-- SYSTEM DESIGN -->
+<section class="py-12">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold mb-6">System Design</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass p-5 rounded-xl hover-card">
+                <h3 class="font-bold">URL Shortener</h3>
+                <p>Scalable design with caching and DB sharding.</p>
+            </div>
+            <div class="glass p-5 rounded-xl hover-card">
+                <h3 class="font-bold">RAG Architecture</h3>
+                <p>LLM + Vector DB + Retrieval pipeline.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<footer class="text-center py-6 text-gray-500">
-    © 2026 Vikash Kumar
-</footer>
+<footer class="text-center py-6 opacity-70">© 2026 Vikash Kumar</footer>
 
 </body>
 </html>
