@@ -5,17 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vikash Kumar | Tech Lead</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
 
-<!-- HERO SECTION -->
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans transition duration-300">
+
+<!-- NAVBAR -->
+<div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
+    <h1 class="font-bold text-lg">Vikash Kumar</h1>
+    <button onclick="toggleTheme()" class="border px-4 py-2 rounded-xl">🌗 Toggle</button>
+</div>
+
+<!-- HERO -->
 <section class="text-center py-16">
     <img src="profile.png" class="w-32 h-32 rounded-full mx-auto mb-4"/>
     <h1 class="text-4xl font-bold">Vikash Kumar</h1>
-    <p class="text-xl text-gray-400 mt-2">Tech Lead | Full Stack Developer | Java • React • AWS</p>
+    <p class="text-xl text-gray-500 dark:text-gray-400 mt-2">
+        Tech Lead | Full Stack Engineer | Java • React • Cloud • GenAI
+    </p>
 
     <div class="mt-6 space-x-4">
-        <a href="Vikash_Kumar_Resume.pdf" class="bg-blue-500 px-6 py-2 rounded-xl shadow-lg">Download Resume</a>
+        <a href="Vikash_Kumar_Resume.pdf" class="bg-blue-500 text-white px-6 py-2 rounded-xl shadow-lg">Resume</a>
         <a href="https://github.com/vikash0304" class="border px-6 py-2 rounded-xl">GitHub</a>
         <a href="https://www.linkedin.com/in/vikash-kumar-219243130/" class="border px-6 py-2 rounded-xl">LinkedIn</a>
     </div>
@@ -23,27 +37,26 @@
 
 <!-- ABOUT -->
 <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-    <p class="text-gray-300">
-        Results-driven Tech Lead with 6+ years of experience designing scalable microservices and full-stack applications.
-        Specialized in Java, Spring Boot, React, and AWS cloud solutions. Proven expertise in system design,
-        performance optimization, and leading high-impact engineering teams.
+    <h2 class="text-2xl font-semibold mb-4">About</h2>
+    <p class="text-gray-600 dark:text-gray-300">
+        Tech Lead with 8+ years of experience building scalable microservices and full-stack applications.
+        Skilled in system design, cloud platforms, and modern GenAI technologies including LLMs and RAG systems.
     </p>
 </section>
 
 <!-- SKILLS -->
-<section class="bg-gray-800 py-12">
+<section class="bg-gray-100 dark:bg-gray-800 py-12">
     <div class="max-w-4xl mx-auto px-6">
         <h2 class="text-2xl font-semibold mb-6">Skills</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-gray-700 p-4 rounded-xl">Java / Spring Boot</div>
-            <div class="bg-gray-700 p-4 rounded-xl">React.js</div>
-            <div class="bg-gray-700 p-4 rounded-xl">AWS (EC2, S3, Lambda)</div>
-            <div class="bg-gray-700 p-4 rounded-xl">Microservices</div>
-            <div class="bg-gray-700 p-4 rounded-xl">Kafka / MQ</div>
-            <div class="bg-gray-700 p-4 rounded-xl">Docker / Kubernetes</div>
-            <div class="bg-gray-700 p-4 rounded-xl">System Design</div>
-            <div class="bg-gray-700 p-4 rounded-xl">TDD / Sonar</div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">Java / Spring Boot</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">REST API / GraphQL</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">ReactJS / Angular</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">AWS / GCP Cloud</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">Kafka / IBM-MQ / Rabbit MQ</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">Docker / Kubernetes</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">DSA - Data Structure and Algorithm</div>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">GenAI / LLM / RAG</div>
         </div>
     </div>
 </section>
@@ -54,47 +67,53 @@
 
     <div class="mb-6">
         <h3 class="text-xl font-bold">Tech Lead - Ford Motors</h3>
-        <p class="text-gray-400">2023 - Present</p>
-        <ul class="list-disc ml-6 text-gray-300 mt-2">
+        <p class="text-gray-500">2023 - Present</p>
+        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
             <li>Designed scalable microservices using Spring Boot</li>
-            <li>Led system design (HLD/LLD) and architecture decisions</li>
-            <li>Improved performance using Java 17 features</li>
-            <li>Integrated CI/CD using Tekton & Kubernetes</li>
+            <li>Led HLD/LLD and architecture decisions</li>
+            <li>Improved performance using Java 17</li>
+            <li>Integrated CI/CD using Kubernetes & Tekton</li>
         </ul>
     </div>
 
     <div class="mb-6">
         <h3 class="text-xl font-bold">Senior Software Engineer - EPAM</h3>
-        <p class="text-gray-400">2021 - 2023</p>
-        <ul class="list-disc ml-6 text-gray-300 mt-2">
-            <li>Built microservices-based systems</li>
-            <li>Worked on AWS (EC2, Lambda, S3, RDS)</li>
-            <li>Implemented caching & messaging (IBM MQ)</li>
+        <p class="text-gray-500">2021 - 2023</p>
+        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
+            <li>Built scalable microservices systems</li>
+            <li>Worked on AWS cloud services</li>
+            <li>Implemented caching and messaging</li>
         </ul>
     </div>
 
     <div>
         <h3 class="text-xl font-bold">Senior Software Engineer - Cybage</h3>
-        <p class="text-gray-400">2018 - 2021</p>
-        <ul class="list-disc ml-6 text-gray-300 mt-2">
-            <li>Developed REST APIs using Java 8+</li>
-            <li>Implemented TDD and improved code quality</li>
+        <p class="text-gray-500">2018 - 2021</p>
+        <ul class="list-disc ml-6 mt-2 text-gray-600 dark:text-gray-300">
+            <li>Developed REST APIs</li>
+            <li>Improved code quality with TDD</li>
         </ul>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="bg-gray-800 py-12">
+<section class="bg-gray-100 dark:bg-gray-800 py-12">
     <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-2xl font-semibold mb-6">Key Projects</h2>
+        <h2 class="text-2xl font-semibold mb-6">Projects</h2>
+
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-gray-700 p-4 rounded-xl">
-                <h3 class="font-bold">Loan Processing Platform</h3>
-                <p class="text-gray-300">End-to-end mortgage platform with scalable microservices architecture.</p>
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">
+                <h3 class="font-bold">Supply Chain Optimization (Prophet)</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    Implemented LTB logic, ML forecasting integration, EOL monitoring, and BOM optimization.
+                </p>
             </div>
-            <div class="bg-gray-700 p-4 rounded-xl">
-                <h3 class="font-bold">Real-time Notification System</h3>
-                <p class="text-gray-300">Built Kafka-based notification system handling high throughput.</p>
+
+            <div class="p-4 bg-white dark:bg-gray-700 rounded-xl">
+                <h3 class="font-bold">GenAI Knowledge Assistant</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    Built RAG-based system using LLM, LangChain, and vector retrieval.
+                </p>
             </div>
         </div>
     </div>
@@ -103,10 +122,12 @@
 <!-- CONTACT -->
 <section class="max-w-4xl mx-auto py-12 px-6 text-center">
     <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-    <p class="text-gray-300">📧 kr.vikash3491@gmail.com</p>
+    <p>Email: kr.vikash3491@gmail.com</p>
+    <p class="mt-2">
+        <a href="https://medium.com/@kr-vikash3491" class="underline">Medium Blog</a>
+    </p>
 </section>
 
-<!-- FOOTER -->
 <footer class="text-center py-6 text-gray-500">
     © 2026 Vikash Kumar
 </footer>
